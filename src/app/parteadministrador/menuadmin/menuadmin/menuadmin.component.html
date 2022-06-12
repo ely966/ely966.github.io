@@ -1,0 +1,40 @@
+<p class=" h2 text-info p-3">
+    <strong>Menú Administrador</strong>
+</p>
+<p></p>
+<!--<p>
+<a href="/cliente" class="btn btn-primary btn-lg " role="button" aria-disabled="true">Primary link</a>
+</p>-->
+<!--Crear veterinario-->
+<div class="col-sm-12 col-md-12 text-center py-2">
+    <a class="btn btn-info btn-lg text-white  col-12 col-lg-12 p-3" (click)="ventanaLoadingReguistros()" routerLinkActive="active" [routerLink]="['/veterinario/opcionVeterinarioAdd/addVeterinario']">Crear veterinario</a>
+</div>
+<!--Mostrar veterinarios-->
+<div class="col-sm-12 col-md-12 text-center py-2">
+    <a class="btn btn-info btn-lg text-white col-12 col-lg-12 p-3" (click)="ventanaLoadingMostrar()" routerLinkActive="active" [routerLink]="['/veterinario/opcionVeterinarioMostrar/mostrarVeterinario']">Mostrar Veterinarios</a>
+</div>
+<!--Crear administradores-->
+<div class="col-sm-12 col-md-12 text-center py-2">
+    <a class="btn btn-info btn-lg text-white  col-12 col-lg-12 p-3" (click)="ventanaLoadingReguistros()" routerLinkActive="active" [routerLink]="['/admin/opcionAdminAdd/adminAdd']">Crear administrador</a>
+</div>
+<!--Mostrar administradores-->
+<div class="col-sm-12 col-md-12 text-center py-2">
+    <a class="btn btn-info btn-lg text-white  col-12 col-lg-12 p-3" (click)="ventanaLoadingMostrar()" routerLinkActive="active" [routerLink]="['/admin/opcionAdminMostrar/mostrarAdmin']">Mostrar Administradores</a>
+</div>
+
+<!--Mostrar clientes-->
+<div class="col-sm-12 col-md-12 text-center py-2">
+    <a class="btn btn-info btn-lg text-white  col-12 col-lg-12 p-3" (click)="ventanaLoadingMostrar()" routerLinkActive="active" [routerLink]="['/cliente/opcionClienteMostrar/mostrarclientes']">Mostrar Cliente</a>
+</div>
+<!--Editar datos-->
+<div class="col-sm-12 col-md-12 text-center py-2">
+    <!-- <a class="btn btn-info btn-lg text-white  col-12 col-lg-12 p-3" (click)="ventanaLoadingReguistros()" routerLinkActive="active" [routerLink]="['/admin/opcionAdminEditar/admineditar']">Editar tus datos</a>
+   -->
+    <a class="btn btn-info btn-lg text-white  col-12 col-lg-12 p-3" (click)="ventanaLoadingReguistros()" routerLinkActive="active" [routerLink]="['/funcionesComunes/funcioncomuneditartusdatos/editarTusDatos']">Editar tus datos</a>
+</div>
+<div class="col-sm-12 col-md-12 text-center py-2">
+    <a class="btn btn-info btn-lg text-white col-12 col-lg-12 p-3" (click)="salirUsuario()">Salir</a>
+</div>
+
+<br>
+<p> </p>

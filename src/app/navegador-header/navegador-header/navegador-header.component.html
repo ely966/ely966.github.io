@@ -1,0 +1,131 @@
+<div class="container-fluid">
+    <div class="row">
+        <nav class="navbar navbar-expand-lg navbar-light  bg-light col-12  " style="background-color: #e3f2fd;">
+            <!--Logo-->
+            <a class="navbar-brand">
+                <img src="./assets/logoConFondoPeq.png" id="logo" width="60" height="60" class="d-inline-block align-top " alt="">
+            </a>
+            <!--FinLogo-->
+            <!--Boton qu se meustre cuando se incoge -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+           <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!--Enlace-->
+
+            <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto navbar-right ">
+                    <!--Enlace Inicio-->
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Inicio</a>
+                    </li>
+                    <!--Fin Enlace inicio-->
+                    <!--MENÚS-->
+                    <!--Zona de los menús-->
+                    <li class="nav-item dropdown" style="background-color: #e3f2fd;">
+                        <!--Enlace Menu cliente-->
+                        <!--Para que se muestre el menu cliente, debe estar logeado y ser de rol cliente-->
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" *ngIf="estarLogin == true && this.isCliente== true">
+                          Menú Cliente
+                        </a>
+                        <div class="dropdown-menu " aria-labelledby="navbarDropdown1" *ngIf="estarLogin == true && this.isCliente== true">
+                            <!--Crear citas-->
+                            <a class="dropdown-item" routerLinkActive="active" [routerLink]="['/citas/crear/crearCita']">Crear Citas</a>
+                            <div class="dropdown-divider"></div>
+                            <!--Separador-->
+                            <!--Mostrar citas-->
+                            <a class="dropdown-item" routerLinkActive="active" [routerLink]="['/citas/mostrarC/mostrarCita']">Mostrar Citas</a>
+                            <div class="dropdown-divider"></div>
+                            <!--Separador-->
+                            <!--Crear mascota-->
+                            <a class="dropdown-item" routerLinkActive="active" [routerLink]="['/mascota/addM/addMascota']">Crear mascota</a>
+                            <div class="dropdown-divider"></div>
+                            <!--Separador-->
+                            <!--Mostrar mascotas-->
+                            <a class="dropdown-item" routerLinkActive="active" [routerLink]="['/mascota/mostrarM/mostrarMascota']">Mostrar mascotas</a>
+                            <div class="dropdown-divider"></div>
+                            <!--Separador-->
+
+                            <a class="dropdown-item" routerLinkActive="active" [routerLink]="['/funcionesComunes/funcioncomuneditartusdatos/editarTusDatos']">Editar tus datos</a>
+                        </div>
+                        <!--Fin de enlace de menu cliente-->
+
+
+                        <!--MENÚ DE ADMINISTRADOR-->
+                        <!--Menu de admin, para que se muestre, debe estar el usuario logeado y ser de rol Admin -->
+
+
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" *ngIf="estarLogin == true && this.isAdmin== true">
+                          Menú Admin
+                           </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown2" *ngIf="estarLogin == true && this.isAdmin== true">
+                            <a class="dropdown-item" routerLinkActive="active" [routerLink]="['/veterinario/opcionVeterinarioAdd/addVeterinario']">Crear veterinario</a>
+                            <div class="dropdown-divider"></div>
+                            <!--Separador-->
+                            <a class="dropdown-item" routerLinkActive="active" [routerLink]="['/veterinario/opcionVeterinarioMostrar/mostrarVeterinario']">Mostrar Veterinarios</a>
+                            <div class="dropdown-divider"></div>
+                            <!--Separador-->
+                            <a class="dropdown-item" routerLinkActive="active" [routerLink]="['/admin/opcionAdminAdd/adminAdd']">Crear administrador</a>
+                            <div class="dropdown-divider"></div>
+                            <!--Separador-->
+                            <a class="dropdown-item" [routerLink]="['/admin/opcionAdminMostrar/mostrarAdmin']">Mostrar Administradores</a>
+                            <div class="dropdown-divider"></div>
+                            <!--Separador-->
+                            <a class="dropdown-item" routerLinkActive="active" [routerLink]="['/funcionesComunes/funcioncomuneditartusdatos/editarTusDatos']">Editar tus datos</a>
+                            <div class="dropdown-divider"></div>
+                            <!--Separador-->
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                        <!-- Fin menu admin -->
+
+
+                        <!--MENÚ VETERINARIO-->
+                        <!--Menu de VETERINARIO, para que se muestre, debe estar el usuario logeado y ser de rol VETERINARIO -->
+
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" *ngIf="estarLogin == true && this.isVeterinario== true">
+                              Menú Veterinario
+                               </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown2" *ngIf="estarLogin == true && this.isVeterinario== true">
+                            <a class="dropdown-item" routerLinkActive="active" [routerLink]="['/veterinario/opcionMostrarCitasVeterinario/mostrarCitasDelVeterinario']">Ver las citas</a>
+                            <div class="dropdown-divider"></div>
+                            <!--Separador-->
+                            <a class="dropdown-item" routerLinkActive="active" [routerLink]="['/calendario/calendariocitascliente/calendriocitaclientee']">Calendario con citas</a>
+                            <div class="dropdown-divider"></div>
+                            <!--Separador-->
+                            <a class="dropdown-item" routerLinkActive="active" [routerLink]="['']">Proceso</a>
+                            <div class="dropdown-divider"></div>
+                            <!--Separador-->
+                            <a class="dropdown-item" [routerLink]="['']">Proceso</a>
+                            <div class="dropdown-divider"></div>
+                            <!--Separador-->
+                            <a class="dropdown-item" routerLinkActive="active" [routerLink]="['/funcionesComunes/funcioncomuneditartusdatos/editarTusDatos']">Editar tus datos</a>
+                            <div class="dropdown-divider"></div>
+                            <!--Separador-->
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </li>
+
+
+                    <!--Icono de sobre aplicacion-->
+                    <li class="nav-item">
+                        <a class="nav-link" routerLinkActive="active" [routerLink]="['/paginasPublic/publicap/sobreapp']">Sobre La aplicacón</a>
+
+                    </li>
+
+                    <!--Fin sobre la aplicaicon-->
+
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a *ngIf="estarLogin == true" (click)="logout()"><span class="glyphicon glyphicon-log-in"></span> Salir</a></li>
+                    </ul>
+                    <!--SALIDA APLICACIÓN-->
+                    <!--Salir de la aplicación-->
+
+
+
+
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>

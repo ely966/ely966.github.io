@@ -1,0 +1,81 @@
+<p>cambiarpassdeunusuario works!</p>
+
+<p class=" h1 text-info">
+    <strong>~Editar tus datos~</strong>
+</p>
+<hr class="text-info">
+<!--Usuario cliente pueda editar su usuario-->
+
+
+<div class="row justify-content-centrer ">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 bg-white py-5 mt-5 rounded text-center ">
+
+        <!--Si se queja formgroup, mira si importaste reactiveformmodule [formGroup]="miFormulario"-->
+        <form [formGroup]="miFormulario" (ngSubmit)="editarpassUsuario()" *ngIf="usuario">
+            <!--Id-->
+            <div class="form-group row  my-2">
+                <p class="text-info h4 py-2"><strong>Su id </strong></p>
+                <div class="col-sm-12">
+                    <input type="number" class="form-control" formControlName="id" id="id" [(ngModel)]="usuario.id" readonly>
+                </div>
+            </div>
+            <!--fin id-->
+            <!--=============================================================================================-->
+            <!--Campo de Nombre-->
+            <div class="form-group row  my-2">
+                <p class="text-info h4 py-2"><strong>Su nombre </strong></p>
+                <div class="col-sm-12">
+                    <input type="text" class="form-control" id="nombre" formControlName="nombre" [(ngModel)]="usuario.nombre" readonly>
+                </div>
+            </div>
+
+            <!--=============================================================================================-->
+            <!--Campo de contraseña-->
+            <div class="form-group row  my-2">
+                <!--FormcontrollName para que pille valor-->
+                <p class="text-info h4 p-2"><strong>Su contraseña </strong></p>
+                <div class="col-sm-12">
+                    <input type="password" class="form-control" formControlName="password" id="password" [(ngModel)]="usuario.password" placeholder="Escribe la contraseña, solo si desea cambiarla, sino dejalo blanco">
+                    <span class="form-text text-danger" *ngIf="campoEsValido('password')">
+                  Error: {{passError}}
+                </span>
+                </div>
+            </div>
+            <!--Fin campo contraseña-->
+            <!--=============================================================================================-->
+            <!--Campo de Direccion. Es opcional. Puede ingresarlo luego-->
+            <div class="form-group row  my-2">
+                <!--FormcontrollName para que pille valor-->
+                <p class="text-info h4 p-2"><strong>Su dirección </strong></p>
+                <div class="col-sm-12">
+                    <input type="text" class="form-control" formControlName="direccion" id="direccion" [(ngModel)]="usuario.direccion" readonly placeholder="Escribe tu dirección. Puedes realizarlo más tarde">
+
+                </div>
+            </div>
+            <!--Fin campo de Direccion-->
+            <!--=============================================================================================-->
+            <!--Campo de telefono-->
+            <div class="form-group row  my-2">
+                <!--FormcontrollName para que pille valor-->
+                <p class="text-info h4 p-2"><strong>Su teléfono </strong></p>
+                <div class="col-sm-12">
+                    <input type="number" class="form-control" formControlName="telefono" id="telefono" [(ngModel)]="usuario.telefono" readonly placeholder="Escribe tu teléfono">
+
+                </div>
+            </div>
+
+            <!--Fin campo de telefono-->
+            <!--=============================================================================================-->
+            <!--Botones-->
+            <div class="form-group row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 my-3">
+                    <a id="botonregresarfor" class="btn btn-secondary text-white col-12 col-lg-6 p-3" (click)="volver()"><strong> <mat-icon>arrow_back</mat-icon> Volver al menú de cliente</strong></a>
+                    <button id="botonregistro" type="submit" class="btn btn-info  col-12 col-lg-6 p-3"><strong> Editar la contraseña del usuario <mat-icon> border_color</mat-icon></strong></button>
+
+
+                </div>
+            </div>
+        </form>
+
+    </div>
+</div>

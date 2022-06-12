@@ -1,0 +1,101 @@
+<p class=" h1 text-info">
+    <strong>Regístrate</strong>
+</p>
+<p></p>
+
+
+
+<div class="row justify-content-centrer ">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 bg-white py-5 mt-5 rounded text-center ">
+
+        <!--Si se queja formgroup, mira si importaste reactiveformmodule-->
+        <form [formGroup]="miFormulario" (ngSubmit)="crearNuevoCliente()">
+
+            <!--Campo del nombre-->
+            <div class="form-group row  my-2">
+                <p class="text-info h4 py-2"><strong>Nombre </strong></p>
+                <div class="col-sm-12">
+                    <input type="text" class="form-control" formControlName="nombre" id="nombre" placeholder="nombre">
+                    <span class="form-text text-danger" *ngIf="campoEsValido('nombre')">
+                      Ups, error: {{nombreError}}
+                    </span>
+                </div>
+            </div>
+            <!--FIn campo del nombre-->
+            <!--=============================================================================================-->
+            <!--Campo de correo-->
+            <div class="form-group row  my-2">
+                <p class="text-info h4 p-2"><strong>Correo </strong></p>
+                <div class="col-sm-12">
+                    <input type="email" class="form-control" formControlName="email" id="email" placeholder="Escribe tu email">
+                    <span class="form-text text-danger" *ngIf="campoEsValido('email') ">
+                      Error : {{ emailErrorMsg }}
+                    </span>
+                </div>
+            </div>
+            <!--Fin campo de correo-->
+            <!--=============================================================================================-->
+            <!--Campo de contraseña-->
+            <div class="form-group row  my-2">
+                <!--FormcontrollName para que pille valor-->
+                <p class="text-info h4 p-2"><strong>Contraseña </strong></p>
+                <div class="col-sm-12">
+                    <input type="password" class="form-control" formControlName="password" id="password" placeholder="Escribe tu password">
+                    <span class="form-text text-danger" *ngIf="campoEsValido('password')">
+                      Error: {{passError}}
+                    </span>
+                </div>
+            </div>
+            <!--Fin campo contraseña-->
+            <!--=============================================================================================-->
+            <!--Campo de Direccion. Es opcional. Puede ingresarlo luego-->
+            <div class="form-group row  my-2">
+                <!--FormcontrollName para que pille valor-->
+                <p class="text-info h4 p-2"><strong>Dirección </strong></p>
+                <div class="col-sm-12">
+                    <input type="text" class="form-control" formControlName="direccion" id="direccion" placeholder="Escribe tu dirección. Puedes realizarlo más tarde">
+                    <span class="form-text text-danger" *ngIf="campoEsValido('direccion')">
+                    --
+                  </span>
+                </div>
+            </div>
+            <!--Fin campo de Direccion-->
+            <!--=============================================================================================-->
+            <!--Campo de telefono-->
+            <div class="form-group row  my-2">
+                <!--FormcontrollName para que pille valor-->
+                <p class="text-info h4 p-2"><strong>Teléfono </strong></p>
+                <div class="col-sm-12">
+                    <input type="number" class="form-control" formControlName="telefono" id="telefono" placeholder="Escribe tu teléfono">
+                    <span class="form-text text-danger" *ngIf="campoEsValido('telefono')">
+                      Error : {{ telefonoError }}<!--Muestra mensaje personalizado del error-->
+                    </span>
+
+                </div>
+            </div>
+
+            <!--Fin campo de telefono-->
+            <!--=============================================================================================-->
+            <!--Botones-->
+            <div class="form-group row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 my-3">
+                    <button type="submit" class="btn btn-info  col-12 col-lg-6 p-3"><strong>Registrar </strong></button>
+                    <a class="btn btn-secondary text-white btn-xs col-12 col-lg-6 p-3 " (click)="volverInicio()"><strong>Volver al inicio </strong></a>
+                </div>
+            </div>
+        </form>
+
+    </div>
+</div>
+
+
+<!-- <div class="form-group row  my-2">
+                <p class="text-info h4 p-2 "><strong>Username </strong></p>
+                <div class="col-sm-12">
+                    <input type="text" class="form-control" formControlName="userName" id="userName" placeholder="UserName">
+
+                    <span class="form-text text-danger" *ngIf="campoEsValido('userName')">
+            No puede estar vacio
+            </span>
+                </div>
+            </div>-->

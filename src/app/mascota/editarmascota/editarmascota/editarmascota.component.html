@@ -1,0 +1,95 @@
+<p class=" h1 text-info row p-3 my-3">
+    <strong> <mat-icon>pets</mat-icon>Editar los datos de tu mascota <mat-icon>pets</mat-icon></strong>
+</p>
+<p class=" h6 text-info row p-3 my-3">
+    <strong> <mat-icon>pets</mat-icon>Puedes editar solo la foto de tu mascota o editar solo los datos, o ambas<mat-icon>pets</mat-icon></strong>
+</p>
+<hr>
+<!--[formGroup]="miFormulario  (ngSubmit)="editarMascota()"" -->
+
+<!--<img src="./assets/labrad.jpg">-->
+
+<!--Cambiar la foto de la amscota->-->
+
+<div class="row col-sm justify-content-center my-3">
+    <img *ngIf="mascotaAeditar?.foto" class="img-thumbnail" src="http://localhost:9000/uploads/img/{{mascotaAeditar.foto}}" width="400" height="350">
+    <p class=" h4 text-info row p-3 my-3 justify-content-center">
+        <mat-icon>pets</mat-icon><strong>¿Quieres cambiar al imagen?</strong>
+        <mat-icon>pets</mat-icon>
+    </p>
+    <div class="input-group mb-3 col-10">
+        <input type="file" (change)="seleccinarFoto($event)" class="form-control col-sm-5 col-md-5 col-lg-5" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
+        <button (click)="subirFoto()" class="btn btn-info col-4" type="button" id="button-addon2">Cambiar imagen</button>
+
+    </div>
+    <hr>
+
+
+    <hr>
+    <!--Fin cambiar la foto de la mascota-->
+
+    <!--Formulario del resto de datos de la mascota
+-->
+    <!--*ngIf="mascotaAeditar" Para que solo carge si hay datos de la mascota y asi evitar errores-->
+    <form [formGroup]="miFormulario" (ngSubmit)="editarMascota()" *ngIf="mascotaAeditar">
+        <div class="form-group row  my-2 justify-content-center">
+            <div class="col-sm-10">
+                <input type="hidden" class="form-control" formControlName="id" id="id" [(ngModel)]="mascotaAeditar.id" value="{{mascotaAeditar.id}}">
+
+            </div>
+        </div>
+        <div class="form-group row  my-2 justify-content-center">
+            <p class="text-info h4 p-2 "><strong> <mat-icon>pets</mat-icon>Nombre </strong></p>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="nombre" formControlName="nombre" [(ngModel)]="mascotaAeditar.nombre" value="{{mascotaAeditar.nombre}}">
+                <!--<span class="form-text text-danger" *ngIf="campoEsValido('nombre')">
+        No puede estar vacio
+      </span>-->
+            </div>
+        </div>
+        <div class="form-group row my-2 justify-content-center">
+            <p class="text-info h4 p-2 "><strong> <mat-icon>pets</mat-icon>Tipo </strong></p>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="tipo" formControlName="tipo" [(ngModel)]="mascotaAeditar.tipo" value="{{mascotaAeditar.tipo}}" readonly/>
+
+                <!--<span class="form-text text-danger" *ngIf="campoEsValido('tipo')">
+        No puede estar vacio
+      </span>-->
+            </div>
+        </div>
+        <div class="form-group row my-2 justify-content-center">
+            <p class="text-info h4 p-2 "><strong> <mat-icon>pets</mat-icon>Raza </strong></p>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="raza" formControlName="raza" [(ngModel)]="mascotaAeditar.raza" value="{{mascotaAeditar.raza}}">
+            </div>
+        </div>
+        <div class="form-group row my-2 justify-content-center">
+            <p class="text-info h4 p-2 "><strong> <mat-icon>pets</mat-icon>Edad </strong></p>
+            <div class="col-sm-10">
+                <input type="number" class="form-control" id="edad" placeholder="Edad de tu mascota" formControlName="edad" [(ngModel)]="mascotaAeditar.edad" value="{{mascotaAeditar.edad}}">
+
+            </div>
+        </div>
+
+        <!-- <div class="form-group row my-2 justify-content-center">
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="usuario" formControlName="usuario" [(ngModel)]="mascotaAeditar.usuario" value="{{mascotaAeditar.usuario}}">
+
+        </div>
+    </div>
+  -->
+        <div class="form-group row justify-content-center p-3">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 my-3">
+                <a id="botonregresarfor" class="btn btn-secondary text-white  col-12  col-lg-6  p-3 " (click)="volverListaMascota()"><strong> <mat-icon>arrow_back</mat-icon>Volver al menú de cliente</strong></a>
+                <button id="botonregistro" type="submit" class="btn btn-info  col-12 col-lg-6  p-3" (click)="editarMascota()"><strong> Editar los datos de tu mascota<mat-icon> border_color</mat-icon></strong></button>
+
+
+            </div>
+
+        </div>
+
+        <br>
+        <br>
+
+    </form>
+    <br>

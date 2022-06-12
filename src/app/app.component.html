@@ -1,0 +1,37 @@
+<div class="Container-fluid">
+    <div class="row col-12  navbar navbar-expand-md navbar-light bg-light " id="navegador">
+        <div class="  ">
+            <app-navegador-header></app-navegador-header>
+        </div>
+    </div>
+    <div class="row  justify-content-center ">
+        <div id="cuerpoApp" class="row col-12 col-12 col-xs-12 col-sm-12 col-md-12 col-lg-7 bg-white py-1 mt-1 rounded text-center fixed-bottom ">
+            <router-outlet></router-outlet>
+            <!--fixed-bottom -->
+        </div>
+    </div>
+    <!--
+    <div class="row justify-content-start "row col-xs-12 col-sm-12 col-md-12 col-lg-6 bg-white py-1 mt-1 rounded text-center fixed-bottom>
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 bg-white py-5 mt-5 rounded text-center ">
+            <router-outlet></router-outlet>
+
+        </div>
+    </div>
+    <div class="row justify-content-end ">
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 bg-white py-5 mt-5 rounded text-center ">
+            <router-outlet></router-outlet>
+
+        </div>
+    </div>
+  -->
+    <!-- <app-navegador-header [texto]="'hola desde el padre'" (eventoHijo)="onMensajeHijo($event)"> </app-navegador-header>-->
+
+
+
+    <div id="footer" class="row ">
+        <footer>
+            <app-footer></app-footer>
+        </footer>
+
+    </div>
+</div>

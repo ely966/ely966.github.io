@@ -1,0 +1,92 @@
+<p class=" h1 text-info row p-3 my-3">
+    <strong>~Pedir Cita <mat-icon> insert_invitation</mat-icon>
+      ~</strong>
+
+</p>
+<p></p>
+
+
+<!--Formulario de crear cita-->
+<form [formGroup]="miFormulario" (ngSubmit)="crearNuevaCita()">
+    <p></p>
+    <!--Selecciona el veterinario-->
+
+
+
+    <div class="form-group row  my-2 justify-content-center">
+        <p class="text-info h3 p-2 col-6 "><strong>Veterinario* <mat-icon>assignment_ind</mat-icon>        </strong></p>
+
+
+        <div class="col-sm-10">
+            <div class="input-group">
+                <select class="form-control m-2" id="idVeterinario" name="idVeterinario" formControlName="idVeterinario" placeholder="Nombre del veterinario" (change)="funciones()">
+                  <option id="idVeterinario" name="idVeterinario" *ngFor="let veterinario of veterinarios" value="{{veterinario.id}}" >Nombre :{{veterinario.nombre}} |---|Tipo de veterinario :  {{veterinario.tipo}}</option>
+              </select>
+                <span class="input-group-btn">
+                  <button class="btn btn-info " type="button" (click)="informacionTipoVeterinarios()"><i class="bi bi-info-circle"></i></button>
+              </span>
+            </div>
+            <span class="form-text text-danger" *ngIf="campoEsValido('idVeterinario')">
+              Hay un error: {{veterinarioError}}
+            </span>
+
+        </div>
+    </div>
+    <!--Fin de selección de veterinario-->
+    <!--=============================================================================================-->
+    <!--Selecciona a fecha de la cita-->
+    <div class="form-group row  my-2 justify-content-center">
+        <p class="text-info h3 p-2 "><strong>Fecha* <mat-icon>calendar_today</mat-icon></strong></p>
+        <div class="col-sm-10">
+            <input type="datetime-local" class="form-control datepicker" formControlName="fecha" id="fecha" placeholder="fecha">
+            <span class="form-text text-danger" *ngIf="campoEsValido('fecha')">
+              Hay un error: {{fechaError}}
+            </span>
+        </div>
+    </div>
+    <!--<input id="fe" type="date">
+    <input id="tiempo" type="time">-->
+    <!--Fin de la selección de la fecha-->
+    <!--=============================================================================================-->
+    <p></p>
+    <!--Mascota-->
+    <div class="form-group row  my-2 justify-content-center">
+        <p class="text-info h3 p-2 "><strong>Mascota* <mat-icon>pets</mat-icon>
+        </strong></p>
+        <div class="col-sm-10">
+            <!--Mascota por defecto es la primera que pille [selected]="mascotas[0]"-->
+            <select class="form-control" id="petid" name="petid" formControlName="petid" placeholder="Nombre de tu mascota">
+          <option id="petid" name="petid" *ngFor="let mascota of mascotas" value="{{mascota.id}}" >{{mascota.nombre}}</option>
+        </select>
+            <span class="form-text text-danger" *ngIf="campoEsValido('petid')">
+          Hay un error: {{mascotaError}}
+        </span>
+        </div>
+    </div>
+    <!--Fin mascota-->
+    <!--=============================================================================================-->
+    <p></p>
+    <!--Motivo-->
+    <div class="form-group row  my-2 justify-content-center">
+        <p class="text-info h3 p-2 "><strong>Especifica motivo* </strong></p>
+        <div class="col-sm-10">
+            <input type="string" class="form-control" id="motivo" formControlName="motivo" placeholder="Motivo de la cita">
+            <span class="form-text text-danger" *ngIf="campoEsValido('motivo')">
+              Hay un error: {{motivoError}}
+            </span>
+        </div>
+    </div>
+
+    <!--Fin motivo-->
+    <!--=======================================================================================-->
+    <!--Botones-->
+    <p></p>
+    <div class="form-group row p-3 justify-content-center">
+        <div class="col-sm-12">
+            <a id="botonregresarfor" class="btn btn-secondary col-12 col-lg-6 text-white p-3" routerLinkActive="active" [routerLink]="['/paginasUser/menu/menucliente']" (click)="carga()"><strong><mat-icon>arrow_back</mat-icon>  Volver al menú de cliente</strong></a>
+            <button id="botonregistro" type="submit" class="btn btn-info  col-12 col-lg-6 p-3"><strong>Solicitar cita <mat-icon>calendar_today</mat-icon></strong></button>
+        </div>
+    </div>
+</form>
+<br>
+<br>

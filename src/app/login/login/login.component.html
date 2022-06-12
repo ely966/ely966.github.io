@@ -1,0 +1,27 @@
+<h3 class="  text-info"> Ingresa tus datos</h3>
+
+<div class="p-2 mt-1 text-center col-sm-12 col-md-12 col-lg-12">
+    <!--[formGroup]="miFormularioLo"-->
+    <form [formGroup]="miFormularioLogin" (ngSubmit)="mandarDatosLogin()">
+        <div class="form-group p-2">
+            <p class="text-info h4 "><strong>Correo </strong></p>
+            <input type="email" class="form-control" formControlName="email" id="email" placeholder="Escribe tu email">
+            <span class="form-text text-danger" *ngIf="campoEsValido('email')">
+                        No puede estar vacio y debe tener formato de email
+            </span>
+        </div>
+        <div class="form-group p-2">
+            <p class="text-info h4 "> <strong>Contraseña</strong> </p>
+            <input type="password" class="form-control" formControlName="password" id="password" placeholder="Escribe tu password">
+            <span class="form-text text-danger" *ngIf="campoEsValido('password')">
+              No puede estar vacio
+            </span>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-info  col-12 p-1" id="botonLogin">
+              <h4>Entrar</h4>
+            </button>
+            <!--<a class="btn btn-secondary text-white btn-xs col-6 col-lg-4 p-2 " href="/">Home</a>-->
+        </div>
+    </form>
+</div>

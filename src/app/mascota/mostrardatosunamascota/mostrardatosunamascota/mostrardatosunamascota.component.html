@@ -1,0 +1,47 @@
+<p class=" h1 text-info row p-3 my-3 justify-content-center">
+    <strong>~Datos de tu mascota~</strong>
+</p>
+<!--[formGroup]="miFormulario  (ngSubmit)="editarMascota()"" -->
+
+<!--<img src="./assets/labrad.jpg">-->
+
+
+<div class="container-fluid">
+
+</div>
+
+<div class="row col-sm justify-content-center my-3">
+    <img *ngIf="datosMascota?.foto" class="img-thumbnail" src="http://localhost:9000/uploads/img/{{datosMascota.foto}}" width="600" height="450">
+    <p class=" h4 text-info row p-3 my-3 justify-content-center">¿Quieres cambiar al imagen?</p>
+    <div class="input-group mb-3 col-10">
+        <input type="file" (change)="seleccinarFoto($event)" class="form-control col-sm-5 col-md-5 col-lg-5" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
+        <button (click)="subirFoto()" class="btn btn-info col-3" type="button" id="button-addon2">Seleccionar imagen</button>
+
+    </div>
+
+
+    <div class="col-sm">
+
+        <ul *ngIf="datosMascota" class="list-group">
+
+            <li class="list-group-item">
+                <mat-icon>pets</mat-icon>Nombre :{{datosMascota.nombre}}
+            </li>
+            <li class="list-group-item">
+                <mat-icon>pets</mat-icon> Edad : {{datosMascota.edad}}
+            </li>
+            <li class="list-group-item">
+                <mat-icon>pets</mat-icon> {{datosMascota.tipo}}
+            </li>
+            <li class="list-group-item"> {{datosMascota.raza}}
+            </li>
+        </ul>
+
+    </div>
+</div>
+<div class="form-group row justify-content-center p-3">
+    <div class="col-sm-10">
+
+        <a class="btn btn-secondary text-white  col-6 col-lg-6 row p-3 " (click)="volverListaMascota()">Volver al menú de cliente</a>
+    </div>
+</div>

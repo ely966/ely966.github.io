@@ -1,0 +1,32 @@
+<p class=" h1 text-info p-3">
+    <strong>Menu Cliente</strong>
+</p>
+<p></p>
+<!--<p>
+  <a href="/cliente" class="btn btn-primary btn-lg " role="button" aria-disabled="true">Primary link</a>
+</p>-->
+<div class="col-sm-12 col-md-12 text-center py-1">
+    <a class="btn btn-info btn-lg text-white  col-12 col-lg-12 p-3" routerLinkActive="active" [routerLink]="['/citas/crear/crearCita']" (click)="ventanaLoadingReguistros()">Pedir Cita</a>
+</div>
+<div class="col-sm-12 col-md-12 text-center py-1">
+    <a class="btn btn-info btn-lg text-white col-12 col-lg-12 p-3" routerLinkActive="active" [routerLink]="['/citas/mostrarC/mostrarCita']" (click)="ventanaLoadingMostrar()">Mostrar Citas</a>
+</div>
+<!--Calendaario-->
+<div class="col-sm-12 col-md-12 text-center py-2">
+    <a class="btn btn-info btn-lg text-white  col-12 col-lg-12 p-3" routerLinkActive="active" [routerLink]="['/calendario/calendariocitascliente/calendriocitaclientee']" (click)="ventanaLoadingMostrar()">Calendario</a>
+</div>
+<div class="col-sm-12 col-md-12 text-center py-2">
+    <a class="btn btn-info btn-lg text-white  col-12 col-lg-12 p-3" routerLinkActive="active" [routerLink]="['/mascota/addM/addMascota']" (click)="ventanaLoadingReguistros()">Registrar Mascota</a>
+</div>
+<div class="col-sm-12 col-md-12 text-center py-2">
+    <a class="btn btn-info btn-lg text-white  col-12 col-lg-12 p-3" routerLinkActive="active" [routerLink]="['/mascota/mostrarM/mostrarMascota']" (click)="ventanaLoadingMostrar()">Mostrar Mascota</a>
+</div>
+<div class="col-sm-12 col-md-12 text-center py-2">
+    <!-- <a class="btn btn-info btn-lg text-white  col-12 col-lg-12 p-3" routerLinkActive="active" [routerLink]="['/cliente/opcionClienteEditar/clienteEditar']" (click)="ventanaLoadingReguistros()">Editar mis datos</a>
+    -->
+    <a class="btn btn-info btn-lg text-white  col-12 col-lg-12 p-3" (click)="ventanaLoadingReguistros()" routerLinkActive="active" [routerLink]="['/funcionesComunes/funcioncomuneditartusdatos/editarTusDatos']">Editar tus datos</a>
+</div>
+
+<div class="col-sm-12 col-md-12 text-center py-2">
+    <a class="btn btn-info btn-lg text-white col-12 col-lg-12 p-3" (click)="salirUsuario()">Salir</a>
+</div>

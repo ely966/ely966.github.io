@@ -1,0 +1,35 @@
+<p class=" h1 text-info">
+    <strong>Notificar al admin</strong>
+</p>
+<p></p>
+<!--Usuario cliente pueda editar su usuario-->
+
+
+<div class="row justify-content-centrer ">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 bg-white py-5 mt-5 rounded text-center ">
+        <a [href]="mailto" target="_top">Send Mail</a>
+
+        <h2>Formulario de contacto</h2>
+        <!--//(ngSubmit)="" #form=”ngForm”-->
+        <form>
+            <div class=”form-group”>
+                <label>Nombre</label>
+                <input type=”text” class=”form-control” name=”nombre” ngModel>
+            </div>
+            <div class=”form-group”>
+                <label>Asunto</label>
+                <input type=”text” class=”form-control” name=”asunto” ngModel>
+            </div>
+            <div class=”form-group”>
+                <label>E-mail</label>
+                <input type=”email” class=”form-control” name=”email” ngModel>
+            </div>
+            <div class=”form-group”>
+                <label>Mensaje</label>
+                <textarea class=”form-control” cols="30" rows="6" name=”mensaje” ngModel></textarea>
+            </div>
+            <button type=”submit” class=”btn btn-primary”>Enviar</button>
+        </form>
+
+    </div>
+</div>

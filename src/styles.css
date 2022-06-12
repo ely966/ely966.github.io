@@ -1,0 +1,321 @@
+html {
+    min-height: 100%;
+}
+
+body {
+    /*Este debajo del navegador navbar*/
+    padding-top: 43px;
+    /*Este por debajo del footer*/
+    padding-bottom: 45px;
+    height: 100%;
+    position: relative;
+    /*Refrencia a fondo de la imagen*/
+    background: url("~/src/assets/imgs/fondoVeterinaria2.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    /*No imagen de fondo*/
+    margin-top: 90px;
+    min-height: 120vh;
+    margin-bottom: 90px;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    top: 50px;
+    -webkit-margin: 0;
+}
+
+
+/*Las letras del body*/
+
+
+/*Formularios*/
+
+strong {
+    font-size: 1.3em;
+}
+
+
+/**/
+
+
+/*Linea dividora*/
+
+hr {
+    border: 3px;
+    height: 4px;
+    margin-top: 20px;
+    background-image: linear-gradient(left, #fff, #0DCAF0, #fff);
+    text-align: center;
+}
+
+
+/*Extras de la linea divisora*/
+
+hr:after {
+    content: "<hr/>";
+    position: relative;
+    top: -12px;
+    display: inline-block;
+    width: 36px;
+    height: 24px;
+    padding: 0;
+    border: 3px solid #0DCAF0;
+    border-radius: 24px;
+    background: #0DCAF0;
+    color: white;
+    font-size: 12px;
+    line-height: 24px;
+}
+
+
+/*Esto hace que haya separacion con footer, porque sino footer estara encima*/
+
+
+/*
+#cuerpoApp {
+    padding: 15%;
+    margin-top: 2%;
+    Separacion dentro
+}
+*/
+
+#cuerpoApp {
+    padding: 5%;
+    margin-top: 2%;
+    /*Separacion dentro*/
+}
+
+
+/**Footer*/
+
+
+/**Footer siempre mantendra abajo**/
+
+footer {
+    font-size: 15px;
+    text-align: center;
+    padding: 3px 0 5px;
+    margin-top: auto;
+    width: 101%;
+    /*Para que ocupe todo el ancho*/
+    bottom: 0;
+    box-sizing: border-box;
+    border-top: 1px solid #ddd;
+    position: fixed;
+    z-index: 9999 !important;
+}
+
+
+/*POsition
+- fixed: se queda fijo, en el lugar sin importar que
+relative: Se movera junto el body
+*/
+
+
+/**Parte superior de aplicaicon navegador*/
+
+
+/*Div del navegador*/
+
+#navegador {
+    position: fixed;
+    width: 101%;
+    top: 0;
+    margin: 0;
+    /*Para que ocupe todo el ancho*/
+    margin-bottom: 20%;
+    z-index: 9999 !important;
+    /*z-index Hace que Sobreponer los menus desplegable de la barra de navegador*/
+}
+
+
+/*Se muetsre encima de los menus del navegador*/
+
+.dropdown-menu {
+    z-index: 0 !important;
+    position: relative;
+}
+
+
+/*tamaño del logo*/
+
+#logo {
+    position: relative;
+    top: -15px;
+}
+
+
+/**Hace que el menu este a la derecha en el navegador**/
+
+#enlacesNav {
+    margin-right: 35px;
+    z-index: 0;
+}
+
+
+/**navegador partes*/
+
+.navbar .nav-item:not(:last-child) {
+    margin-right: 35px;
+}
+
+.dropdown-toggle::after {
+    transition: transform 0.15s linear;
+}
+
+.show.dropdown .dropdown-toggle::after {
+    transform: translateY(3px);
+}
+
+.logopub {
+    width: 10% !important;
+    height: 15px;
+}
+
+
+/*FIn navegador*/
+
+
+/*========================================*/
+
+
+/**Notificaciones*/
+
+
+/*Carga*/
+
+
+/*Venatnas de carga el circulo  uw gira*/
+
+.spinner {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+
+
+/*===========================================================*/
+
+
+/*Especificaciones por tamaño*/
+
+
+/* Extra small devices (portrait phones, less than 576px)
+https://getbootstrap.com/docs/4.1/layout/overview/*/
+
+
+/*Teléfonos móviles y tablet*/
+
+
+/*868*/
+
+@media (max-width: 968px) {
+    /*Botones de registros y editar*/
+    /* para que se muestre
+     primero el boton de registrar/editar en estos tamaño*/
+    #botonregistro {
+        bottom: 55%;
+    }
+    #botonregresarfor {
+        bottom: -55%;
+    }
+    /*Tablas tengan scroll*/
+    table {
+        margin-top: 20px;
+        display: inline-block;
+        overflow: auto;
+    }
+    th div {
+        margin-top: 20px;
+        position: sticky
+    }
+    /**/
+}
+
+
+/*=====================================================================*/
+
+
+/*575.98*/
+
+@media (max-width: 850.98px) {
+    /*Tamaño de letra*/
+    body p {
+        font-size: 32px;
+    }
+}
+
+
+/*Tablet*/
+
+@media (min-width: 768px) and (max-width: 991.98px) {}
+
+
+/*=======================================================================================================*/
+
+
+/* angular-cli file: src/styles.css */
+
+
+/*
+@import "../node_modules/angular-calendar/css/angular-calendar.css";
+@import '~@fullcalendar/core/main.css';
+@import '~@fullcalendar/daygrid/main.css';*/
+
+
+/*=========================================*/
+
+
+/*Tamaño letras*/
+
+
+/*
+@include media-breakpoint-up(sm) {
+    html {
+        font-size: 1.9rem;
+    }
+}
+
+@include media-breakpoint-up(md) {
+    html {
+        font-size: 1.7rem;
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    html {
+        font-size: 1.5rem;
+    }
+}
+*/
+
+
+/*@media (max-width:7800px) and (min-width:500px) {
+    p {
+        font-size: 7 em;
+    }
+}*/
+
+
+/*tamaño letras*/
+
+
+/*
+@media only screen and (max-width: 767px) {
+    body {
+        background-image: url(images/background-photo-mobile-devices.jpg);
+    }
+}*/
+
+
+/*.container-fluid {background-position: center center;
+padding-top: 0.5%;
+padding-bottom: 25%;
+background-image: url("");
+background-repeat: no-repeat;
+background-size: 100% 100%;
+height: 100vw;
+
+}
+*/

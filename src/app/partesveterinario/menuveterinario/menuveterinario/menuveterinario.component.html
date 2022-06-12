@@ -1,0 +1,32 @@
+<!--Titulo-->
+<p class="h1 text-info p-4">
+    <strong>Menú Veterinario</strong>
+</p>
+<!--Opciones que tiene el usuario-->
+
+<div class="col-sm-12 col-md-12 text-center py-2">
+    <a class="btn btn-info btn-lg text-white col-12 col-lg-12 p-3" routerLinkActive="active" [routerLink]="['/veterinario/opcionMostrarCitasVeterinario/mostrarCitasDelVeterinario']">Mostrar Citas</a>
+</div>
+<!--Calendaario-->
+<div class="col-sm-12 col-md-12 text-center py-2">
+    <a class="btn btn-info btn-lg text-white  col-12 col-lg-12 p-3" routerLinkActive="active" [routerLink]="['/calendario/calendariocitascliente/calendriocitaclientee']" (click)="ventanaLoadingMostrar()">Calendario</a>
+</div>
+<!--Editar datos-->
+<div class="col-sm-12 col-md-12 text-center py-2">
+    <a class="btn btn-info btn-lg text-white  col-12 col-lg-12 p-3" (click)="ventanaLoadingReguistros()" routerLinkActive="active" [routerLink]="['/veterinariopag/opcionnotificaradmin/notificaradmin']">Notificar Admin-En contruccion-</a>
+</div>
+
+<div class="col-sm-12 col-md-12 text-center py-2">
+    <a class="btn btn-info btn-lg text-white  col-12 col-lg-12 p-3" href="mailto:admveterinario4@gmail.com?Subject=Interesado%20en%20el%20curso" (click)="ventanaLoadingReguistros()">Notificar-En contruccion-</a>
+</div>
+<!--Editar datos-->
+<div class="col-sm-12 col-md-12 text-center py-2">
+    <!--<a class="btn btn-info btn-lg text-white  col-12 col-lg-12 p-3" (click)="ventanaLoadingReguistros()" routerLinkActive="active" [routerLink]="['/veterinario/opcionVeterinarioEditar/veterinarioeditar']">Editar tus datos</a>
+    -->
+    <a class="btn btn-info btn-lg text-white  col-12 col-lg-12 p-3" (click)="ventanaLoadingReguistros()" routerLinkActive="active" [routerLink]="['/funcionesComunes/funcioncomuneditartusdatos/editarTusDatos']">Editar tus datos</a>
+
+</div>
+
+<div class="col-sm-12 col-md-12 text-center py-2">
+    <a class="btn btn-info btn-lg text-white col-12 col-lg-12 p-3" (click)="salirUsuario()">Salir</a>
+</div>

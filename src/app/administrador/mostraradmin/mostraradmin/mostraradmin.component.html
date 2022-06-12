@@ -1,0 +1,50 @@
+<p class=" h3 text-info row p-3 my-3">
+    <strong>Lista de Administradores</strong>
+</p>
+<div class="row">
+    <div class=" col-xs-10 col-sm-10 col-md-12 col-lg-12 py-2s ">
+        <table class="table table-striped table-bordered p-3">
+            <thead>
+                <tr class=" table-info ">
+                    <th scope="col " class="d-none ">Id</th>
+                    <!--Ocultar si no es escritorio-->
+                    <th scope="col ">Nombre</th>
+                    <th scope="col ">Correo</th>
+
+                    <th scope="col ">Opciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let admin of admins ">
+                    <th scope="row " class="d-none">{{admin.id}}</th>
+                    <!--Ocultar si no es escritorio-->
+                    <td>{{admin.nombre}}</td>
+                    <td>{{admin.email}}</td>
+
+
+                    <td>
+
+
+                        <!--Botón apra borrar-->
+                        <!--href="/mascota/editarmascota "-->
+                        <button (click)="borrarAdmin(admin) " class="btn btn-danger text-white " value=iconoBasura()>
+
+                      <fa-icon [icon]="fatrashcan "></fa-icon> Borrar
+                    </button>
+                        <!--Para el icono de papelera-->
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+<div class="form-group row p-3 justify-content-center">
+    <div class="row">
+        <a id="botonregresarfor" class="btn btn-secondary col-12  text-white p-3" routerLinkActive="active" [routerLink]="['/parteadm/menua/menuAdmin']" (click)="cargarRegresar()"><strong><mat-icon>arrow_back</mat-icon> Volver al menú </strong></a>
+    </div>
+
+</div>
+<!-- <a class="btn btn-secondary text-white p-3" routerLinkActive="active" [routerLink]="['/parteadm/menua/menuAdmin']"><strong>Volver al menú de administrador </strong></a>-->

@@ -1,0 +1,77 @@
+<p class=" h1 text-info row p-3 my-3">
+    <strong><mat-icon>pets</mat-icon>Registra a tu mascota<mat-icon>pets</mat-icon></strong>
+</p>
+
+<!--(change)="seleccionarArchivo($event)"-->
+<form [formGroup]="miFormulario" (ngSubmit)="crearNuevaMascota()" enctype="multipart/form-data">
+    <!--Nombre de la mascota-->
+    <div class="form-group row  my-2 justify-content-center">
+        <p class="text-info h4 p-2 "><strong>~Nombre de tu mascota*~</strong></p>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" formControlName="nombre" id="nombre" placeholder="Nombre de su mascota">
+            <span class="form-text text-danger" *ngIf="campoEsValido('nombre')">
+             Hay un error:{{nombreError}}
+            </span>
+        </div>
+    </div>
+    <!--Fin nombre mascota-->
+    <!--=============================================================================================-->
+    <!--Tipo de la mascota-->
+
+    <div class="form-group row my-2 justify-content-center">
+        <p class="text-info h4 p-2 "><strong>~Tipo de mascota*~</strong></p>
+        <div class="col-sm-10">
+            <!--<input type="text" class="form-control" formControlName="tipo" id="tipo" placeholder="Tipo de mascota">
+            --><select name="transporte" class="form-control" formControlName="tipo" id="tipo" required>
+              <option selected="true">Perro</option>
+              <option > Gato</option>
+              <option >Pajáro</option>
+              <option >Reptíl</option>
+              <option >Roedor</option>
+              <option >Otro</option>
+              </select>
+            <span class="form-text text-danger" *ngIf="campoEsValido('tipo')">
+              Hay un error: {{tipoError}}
+            </span>
+        </div>
+    </div>
+    <!--Fin tipo de mascota-->
+
+    <!--=============================================================================================-->
+    <!--Raza de la mascota-->
+
+    <div class="form-group row my-2 justify-content-center">
+        <p class="text-info h4 p-2 "><strong>~Raza de tu mascota~ </strong></p>
+        <div class="col-sm-10">
+            <input type="name" class="form-control" formControlName="raza" id="raza" value="SinRazaPordefecto" placeholder="Pon la raza, puedes dejarlo vacio si no tiene o no sabes">
+        </div>
+    </div>
+    <!--Fin de la raza de la mascota-->
+    <!--=============================================================================================-->
+    <!--Edad de la mascota-->
+    <div class="form-group row my-2 justify-content-center">
+        <p class="text-info h4 p-2 "><strong>~Edad de tu mascota*~ </strong></p>
+        <div class="col-sm-10">
+            <input type="Number" class="form-control" formControlName="edad" id="edad" placeholder="Edad de tu mascota">
+            <span class="form-text text-danger" *ngIf="campoEsValido('edad')">
+              Hay un error: {{edadError}}
+            </span>
+        </div>
+    </div>
+
+    <!--Fin de la edad de mascota-->
+    <!--=============================================================================================-->
+
+
+    <!--=============================================================================================-->
+    <!--Botones-->
+
+    <div class="form-group row p-3 justify-content-center ">
+        <div class="col-sm-12">
+            <a id="botonregresarfor" class="btn btn-secondary col-12 col-lg-6 text-white p-3" routerLinkActive="active" [routerLink]="['/paginasUser/menu/menucliente']" (click)="cargarRegresar()"><strong><mat-icon>arrow_back</mat-icon>  Volver al menú de cliente</strong></a>
+            <button id="botonregistro" type="submit" class="btn btn-info  col-12 col-lg-6 p-3"><strong>Registrar tu mascota<mat-icon>create_new_folder</mat-icon></strong></button>
+        </div>
+    </div>
+</form>
+<br>
+<br>

@@ -1,0 +1,47 @@
+<div class="row text-center">
+    <div class="col-sm-12 col-md-12 col-lg-12">
+        <p class=" h1 text-info row p-1 my-2">
+            <strong>Calendario de tus citas</strong>
+        </p>
+
+
+        <div id='calendar'>
+
+            <full-calendar [options]="calendarOptions"></full-calendar>
+
+        </div>
+        <hr>
+        <!--(click)="handleDateClick($event)"-->
+
+
+
+        <!--=======================================================================================-->
+        <!--Botones-->
+        <p></p>
+        <div id="calendario" class="form-group row p-3 justify-content-center">
+            <!--Si es un usuario cliente-->
+            <div class="col-sm-12" *ngIf="this.role == 'CLIENTE'">
+                <!--<a id="botonregresarfor" class="btn btn-secondary col-12 col-lg-6 text-white p-3" routerLinkActive="active" [routerLink]="['/paginasUser/menu/menucliente']" (click)=" cargarRegresar()"><strong><mat-icon>arrow_back</mat-icon>  Volver al menú de cliente</strong></a>
+                -->
+                <div class="form-group row p-3 justify-content-center">
+                    <div class="row">
+                        <a id="botonregresarfor" class="btn btn-secondary col-12  text-white p-3" routerLinkActive="active" [routerLink]="['/paginasUser/menu/menucliente']" (click)="cargarRegresar()"><strong><mat-icon>arrow_back</mat-icon> Volver al menú de cliente</strong></a>
+                    </div>
+
+
+                </div>
+            </div>
+            <!--Si es un usuario VETERINARIO-->
+            <div class="col-sm-12" *ngIf="this.role == 'VETERINARIO'">
+                <div class="form-group row p-3 justify-content-center">
+                    <div class="row">
+                        <a id="botonregresarfor" class="btn btn-secondary col-12  text-white p-3" routerLinkActive="active" [routerLink]="['/veterinariopag/opcionmenuVeterinario/menuVeterinario']" (click)="cargarRegresar()"><strong><mat-icon>arrow_back</mat-icon> Volver al menú de veterinario</strong></a>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+        <br>
+        <br>
