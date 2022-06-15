@@ -4,13 +4,13 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Cliente } from '../interfaces/cliente.interface';
-import { ClienteFull } from '../interfaces/clienteFull.interface';
 import { editaruser } from '../interfaces/editarUser.interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AdministradorserviService {
+  //http://proyectodawveterinaria.herokuapp.com/
   url= "https://proyectodawveterinaria.herokuapp.com/";
   token =localStorage.getItem("tokenGuardado");
   veterinario!:UsuarioFull;
