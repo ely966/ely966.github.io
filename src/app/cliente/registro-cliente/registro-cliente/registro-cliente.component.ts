@@ -29,7 +29,7 @@ export class RegistroClienteComponent implements OnInit {
   reglaEmail: string= "^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$";
 
   //regla de nombre
-  reglaNombre:string="[A-Za-z]{1,20}"
+  reglaNombre:string="[A-Za-z]{1,20}[' ']{1}[A-Za-z]{1,20}"
   //Regla apellidos
   reglaApellidos:string="^[A-Za-z]{1,20}[' ']{1}[A-Za-z]{1,20}$"
   //Regla de la contraseña//
@@ -42,8 +42,7 @@ export class RegistroClienteComponent implements OnInit {
   /*=================================================================================== */
   miFormulario: FormGroup = this.formB.group({//Validators.pattern('/^[a-z]{1,15}$/g'), Validators.pattern('[a-z]{3,15}')
     //userName: [ , [ Validators.required,Validators.minLength(4)  ]],
-    nombre: ['' , [ Validators.required,Validators.pattern(this.reglaNombre) ]],
-    password: [ '', [ Validators.required,Validators.minLength(4)  ]],
+    nombre: ['' , [ Validators.required,Validators.nullValidator ]],
     email: ['' , [ Validators.required, Validators.minLength(5), Validators.pattern( this.reglaEmail)], [ this.emailValidator ]],
     direccion:[''],
     telefono:['', [Validators.required, Validators.pattern(this.reglaTelefono)]]
@@ -78,7 +77,7 @@ export class RegistroClienteComponent implements OnInit {
     if ( errors['required'] ) { //Si salta, que es requirido significa que el campo esta vacio
       return 'El nombre es obligatorio. No puede estar vacío';
     } else if ( errors['pattern'] ) {//Si salta que no esta con el formato correcto
-      return 'El valor ingresado no tiene formato de correo';
+      return 'El valor ingresado debe contener nombre y primer apellido';
     } else {
       //**Si todo esta bien */
       return '';

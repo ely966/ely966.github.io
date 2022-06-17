@@ -27,9 +27,8 @@ export class EditarClienteComponent implements OnInit {
   reglaEmail: string= "^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$";
 
   //regla de nombre
-  reglaNombre:string="[A-Za-z]{1,20}"
+  reglaNombre:string="[A-Za-z]{1,20}[' ']{1}[A-Za-z]{1,20}"
   //Regla apellidos
-  reglaApellidos:string="^[A-Za-z]{1,20}[' ']{1}[A-Za-z]{1,20}$"
   //Regla de la contraseña//
   reglaPass: string="";
 

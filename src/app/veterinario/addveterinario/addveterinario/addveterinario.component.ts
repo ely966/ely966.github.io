@@ -47,7 +47,7 @@ export class AddveterinarioComponent implements OnInit {
   reglas: string= "^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$";
   miFormulario: FormGroup = this.formB.group({//Validators.pattern('/^[a-z]{1,15}$/g'), Validators.pattern('[a-z]{3,15}')
     //userName: [ , [ Validators.required,Validators.minLength(4)  ]],
-    nombre: ['' , [ Validators.required,Validators.pattern(this.reglaNombre) ]],
+    nombre: ['' , [ Validators.required,Validators.nullValidator]],
     password: [ '', [ Validators.required,Validators.minLength(4)  ]],
     email: ['' , [ Validators.required, Validators.minLength(5), Validators.pattern( this.reglaEmail)], [ this.emailValidator ]],
     direccion:[''],
